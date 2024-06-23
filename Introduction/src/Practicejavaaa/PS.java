@@ -16,6 +16,11 @@ public class PS
    public void beforeRun()
    {
 	   System.out.println("run me first");
+	   System.out.println("run me first");
+	   System.out.println("run me first");
+	   System.out.println("run me first");
+	   System.out.println("run me first");
+	   System.out.println("run me first");
    }
    
    @AfterMethod
