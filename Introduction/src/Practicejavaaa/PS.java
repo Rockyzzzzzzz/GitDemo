@@ -12,7 +12,9 @@ public class PS
 	   System.out.println("i m here");
 	   System.out.println("change by x");
 	   System.out.println("change by y");
+	   System.out.println("change by z");
    }
+   
    
    @BeforeMethod
    public void beforeRun()
