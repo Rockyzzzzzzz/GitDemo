@@ -1,0 +1,96 @@
+package TestNgTutorial;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+public class Day3 
+{
+	@Parameters({"URL","APIKey/username"})
+	@Test
+    public void webLoginCarLoan(String urlName, String key)
+    {
+   	 System.out.println("Weblogincar");
+   	 System.out.println(urlName);
+   	System.out.println(key);
+    }
+	
+	@Parameters({"URR"})
+	@Test
+    public void webLoginCarLoans(String urlName, String key)
+    {
+   	 System.out.println("Weblogincar");
+   	 System.out.println(urlName);
+  
+    }
+	
+	
+	
+	@Test(enabled=false)
+    public void mobileLoginCarLoan()
+    {
+   	 System.out.println("Mobilelogincar");
+    }
+	
+	@BeforeMethod
+	public void bfMethod()
+    {
+   	 System.out.println("Before every method in day 3 class");
+    }
+	
+	@BeforeSuite
+	public void bfSuite()
+    {
+   	 System.out.println("Before suite");
+    }
+	
+	@AfterMethod
+	public void affMethod()
+    {
+   	 System.out.println("After every method in day 3 class");
+    }
+	
+
+	
+	//to exclude all methods related use regular expression (exclude name="mobile.*"")
+	//to exclude particular method (exclude name="mobileLoginCarLoan")
+	@Test(groups= {"Smoke"})
+    public void mobileSignininCarLoan()
+    {
+   	 System.out.println("Mobilesignincar");
+    }
+	
+	
+	@Test(dataProvider="getData")
+    public void mobileSignoutCarLoan(String username, String password)
+    {
+   	 System.out.println("MobileSignoutcar");
+   	 System.out.println(username);
+   	 System.out.println(password);
+    }
+	@Test(dependsOnMethods= {"webLoginCarLoan"})
+    public void apiLoginCarLoan()
+    {
+   	 System.out.println("APIlogincar");
+    }
+	
+	@DataProvider
+	public Object[][] getData()
+	{
+		Object[][] data= new Object[3][2];
+		data[0][0]="First Username";
+		data[0][1]="First Password";
+		
+		data[1][0]="Second Username";
+		data[1][1]="Second Password";
+		
+		data[2][0]="Third Username";
+		data[2][1]="Third Password";
+		
+		return data;
+		
+	}
+}

@@ -1,0 +1,31 @@
+package GSir;
+
+import org.testng.annotations.Test;
+
+public class TestNgPriorityDemo {
+
+	@Test(priority=-1)
+	public void testScirpt2() 
+	{
+		System.out.println("testScirpt2");
+	}
+	
+	@Test(priority=-1)
+	public void testScirpt1() 
+	{
+		System.out.println("testScirpt1");
+	}
+	
+	@Test(priority=3)
+	public void testScirpt4() 
+	{
+		System.out.println("testScirpt4");
+	}
+	
+	@Test
+	public void testScirpt3() 
+	{
+		System.out.println("testScirpt3");
+	}
+
+}

@@ -1,0 +1,57 @@
+package GSir;
+
+import org.testng.annotations.AfterGroups;
+import org.testng.annotations.BeforeGroups;
+import org.testng.annotations.Test;
+
+public class GroupsDemo {
+
+	@Test(groups="smoke")
+	public void smokeTest1() {
+		System.out.println("Smoke Test1");
+	}
+	
+	@Test(groups="smoke")
+	public void smokeTest2() {
+		System.out.println("Smoke Test2");
+	}
+	
+	@Test(groups="regression")
+	public void regression1() {
+		System.out.println("regression1");
+	}
+	
+	@Test(groups="regression")
+	public void regression2() {
+		System.out.println("regression2");
+	}
+	
+	/*@Test(groups= {"smoke","regression"})
+	public void preRequisite() {
+		System.out.println("Both Groups");
+	}*/
+	
+	
+	@BeforeGroups(groups="regression")
+	public void beforeGrp() {
+		System.out.println("Before Groups for regression demo");
+	}
+	
+	
+	@AfterGroups("regression")
+	public void afterGrp() {
+		System.out.println("after Groups for regression demo");
+	}
+	
+	
+	@BeforeGroups("smoke")
+	public void beforeGrp1() {
+		System.out.println("Before Groups for smoke demo");
+	}
+	
+	
+	@AfterGroups("smoke")
+	public void afterGrp1() {
+		System.out.println("after Groups for smoke demo");
+	}
+}
