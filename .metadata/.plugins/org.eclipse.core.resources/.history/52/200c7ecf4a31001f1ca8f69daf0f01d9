@@ -8,13 +8,7 @@ public class PS
    public void doThis()
    {
 	   System.out.println("i m here");
-	   System.out.println("i m here");
-	   System.out.println("i m here");
-	   System.out.println("change by x");
-	   System.out.println("change by y");
-	   System.out.println("change by z");
-	
-	   
+	  
    }
    
    
