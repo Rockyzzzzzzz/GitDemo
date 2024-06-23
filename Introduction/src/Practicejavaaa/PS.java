@@ -8,6 +8,8 @@ public class PS
    public void doThis()
    {
 	   System.out.println("i m here");
+	   System.out.println("i m here");
+	   System.out.println("i m here");
    }
    
    @BeforeMethod
